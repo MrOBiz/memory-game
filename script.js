@@ -13,23 +13,75 @@ function Cell(id){
 
     let getCardId = () => {
         return (faceUp === true || paired === true)?
-            pairId : "nope";
+            pairId : "Card not visible";
     }
 
     function flip() {
         if(paired === false){
             return (faceUp === false)? faceUp = true : faceUp = false;
-        }else{return;}
+        }else return;
     }
 
     return {getCardOrientation, getCardState, getCardId, flip};
 }
 
-const card = Cell(3);
-const cardTwo = Cell(2);
-console.log(card.getCardOrientation());
+function Board() {
+    let board = [];
+    let list = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
 
-card.flip();
-console.log(card.getCardOrientation());
-console.log(card.getCardId());
-console.log(cardTwo.getCardId());
+    let boardSide = 4;
+
+    for(let i = 0; i < list.length; i++){
+        let t;
+        let randomPos = Math.floor(Math.random()*16);
+        t = list[i]; 
+        list[i] = list[randomPos];
+        list[randomPos] = t;
+    } 
+
+    function createBoard() {
+        for(let i = 0; i < boardSide; i++){
+            board[i] = [];
+            for(let j = 0; j < boardSide; j++){
+                board[i][j] = new Cell(list[i + j]);
+            }
+        }
+    }
+
+    function printList() {
+        console.log(list);
+    }
+
+    createBoard();
+
+    return {printList};    
+
+}
+
+let b = new Board();
+b.printList();
+
+/* Resume this session with:
+  grok --resume 01a076d7-7f58-7a51-929c-54c10cf02723 */
+
+/*SHUFFLER DEBUG 
+
+let list = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7];
+
+for(let i = 0; i < list.length; i++){
+    let t;
+    let randomPos = Math.floor(Math.random()*16);
+
+    console.log("rdn number: " + randomPos);
+
+    t = list[i]; 
+    console.log(t);
+
+    list[i] = list[randomPos];
+    console.log(list[i]);
+
+    list[randomPos] = t;
+
+} 
+
+console.log(list); */
