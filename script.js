@@ -40,12 +40,15 @@ function Board() {
     } 
 
     function createBoard() {
+        let id = 0;
         for(let i = 0; i < boardSide; i++){
             board[i] = [];
             for(let j = 0; j < boardSide; j++){
-                board[i][j] = new Cell(list[i + j]);
+                board[i][j] = new Cell(list[id]);
+                id++
             }
         }
+        id = 0;
     }
 
     function printList() {
