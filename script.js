@@ -51,23 +51,21 @@ function Board() {
         id = 0;
     }
 
-    function printList() {
-        console.log(list);
-    }
-
     let printBoard = () =>{
-        console.log(board)
+        for(let i = 0; i < boardSide; i++){
+            for(let j = 0; j < boardSide; j++){
+                console.log(board[i][j].getCardId());
+            }
+        }
     }
 
     createBoard();
 
-    return {printList, createBoard, printBoard};    
+    return {createBoard, printBoard};    
 
 }
 
 let b = new Board();
-b.printList();
-b.createBoard();
 b.printBoard()
 
 /* Resume this session with:
