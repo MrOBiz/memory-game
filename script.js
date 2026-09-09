@@ -16,13 +16,17 @@ function Cell(id){
             pairId : "Card not visible";
     }
 
+    let setPaired = () => {
+        return paired = true;
+    }
+
     function flip() {
         if(paired === false){
             return (faceUp === false)? faceUp = true : faceUp = false;
         }else return;
     }
 
-    return {getCardOrientation, getCardState, getCardId, flip};
+    return {getCardOrientation, getCardState, getCardId, setPaired, flip};
 }
 
 function Board() {
@@ -45,7 +49,7 @@ function Board() {
             board[i] = [];
             for(let j = 0; j < boardSide; j++){
                 board[i][j] = new Cell(list[id]);
-                id++
+                id++;
             }
         }
         id = 0;
@@ -65,13 +69,19 @@ function Board() {
     }
 
     createBoard();
+    printBoard();
 
-    return {printBoard, flipCard};    
+    return {flipCard};    
+}
+
+function Game(){
+    let myBoard = Board();
+    let player = ["John", "Dana"];
+    let pairCount = 0;
 
 }
 
 let b = new Board();
-b.printBoard()
 b.flipCard(0, 3);
 
 /* Resume this session with:
