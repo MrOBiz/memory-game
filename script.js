@@ -59,14 +59,20 @@ function Board() {
         }
     }
 
+    let flipCard = (i, j) =>{
+        board[i][j].flip();
+        printBoard();
+    }
+
     createBoard();
 
-    return {createBoard, printBoard};    
+    return {printBoard, flipCard};    
 
 }
 
 let b = new Board();
 b.printBoard()
+b.flipCard(0, 3);
 
 /* Resume this session with:
   grok --resume 01a076d7-7f58-7a51-929c-54c10cf02723 */
