@@ -55,14 +55,20 @@ function Board() {
         console.log(list);
     }
 
+    let printBoard = () =>{
+        console.log(board)
+    }
+
     createBoard();
 
-    return {printList};    
+    return {printList, createBoard, printBoard};    
 
 }
 
 let b = new Board();
 b.printList();
+b.createBoard();
+b.printBoard()
 
 /* Resume this session with:
   grok --resume 01a076d7-7f58-7a51-929c-54c10cf02723 */
