@@ -68,10 +68,14 @@ function Board() {
         printBoard();
     }
 
+    let printCard = (i, j) => {
+        board[i][j].getCardId();
+    }
+
     createBoard();
     printBoard();
 
-    return {flipCard};    
+    return {flipCard, printCard};    
 }
 
 function Game(){
