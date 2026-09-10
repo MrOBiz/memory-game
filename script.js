@@ -72,10 +72,14 @@ function Board() {
         board[i][j].getCardId();
     }
 
+    let markPaired = (i, j) => {
+        board[i][j].setPaired()
+    }
+
     createBoard();
     printBoard();
 
-    return {flipCard, printCard};    
+    return {flipCard, printCard, markPaired};    
 }
 
 function Game(){
