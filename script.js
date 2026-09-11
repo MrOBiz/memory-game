@@ -85,12 +85,16 @@ function Board() {
 function Game(){
     let myBoard = Board();
     let player = ["John", "Dana"];
-    let pairCount = 0;
+    let pairCountOne = 0;
+    let pairCountTwo = 0;
 
 }
 
 let b = new Board();
 b.flipCard(0, 3);
+b.printCard(0, 3);
+
+
 
 /* Resume this session with:
   grok --resume 01a076d7-7f58-7a51-929c-54c10cf02723 */
