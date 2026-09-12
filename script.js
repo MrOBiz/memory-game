@@ -100,8 +100,11 @@ function Game(){
             activePlayer = players[1] : activePlayer = players[0];
     }
 
+    function playRound(row, col){
+        
+    }
 
-    return {}
+    return {playRound}
 }
 
 /* let b = new Board();
