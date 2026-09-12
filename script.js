@@ -84,15 +84,31 @@ function Board() {
 
 function Game(){
     let myBoard = Board();
-    let player = ["John", "Dana"];
+    let players = ["John", "Dana"];
+    let activePlayer = players[0];
     let pairCountOne = 0;
     let pairCountTwo = 0;
 
+    let getFirstPlayer = () => {
+        let start = Math.floor(Math.random * 2);
+        return start;
+    }
+
+    let switchTurn = () => {
+        return (activePlayer === players[0])? 
+            activePlayer = players[1] : activePlayer = players[0];
+    }
+
+
+    return {getFirstPlayer}
 }
 
-let b = new Board();
+/* let b = new Board();
 b.flipCard(0, 3);
-b.printCard(0, 3);
+b.printCard(0, 3); */
+
+let g = new Game();
+console.log(g.getFirstPlayer());
 
 
 
