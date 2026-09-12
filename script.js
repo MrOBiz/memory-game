@@ -85,13 +85,14 @@ function Board() {
 function Game(){
     let myBoard = Board();
     let players = ["John", "Dana"];
-    let activePlayer = players[0];
+    let activePlayer = getFirstPlayer();
     let pairCountOne = 0;
     let pairCountTwo = 0;
 
-    let getFirstPlayer = () => {
-        let start = Math.floor(Math.random * 2);
-        return start;
+    function getFirstPlayer(){
+        let start = Math.floor(Math.random() * 2);
+        console.log(start);
+        return players[start];
     }
 
     let switchTurn = () => {
@@ -108,7 +109,11 @@ b.flipCard(0, 3);
 b.printCard(0, 3); */
 
 let g = new Game();
-console.log(g.getFirstPlayer());
+g.getFirstPlayer();
+g.getFirstPlayer();
+g.getFirstPlayer();
+g.getFirstPlayer();
+
 
 
 
