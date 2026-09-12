@@ -69,7 +69,7 @@ function Board() {
     }
 
     let printCard = (i, j) => {
-        board[i][j].getCardId();
+        return board[i][j].getCardId();
     }
 
     let markPaired = (i, j) => {
@@ -101,18 +101,14 @@ function Game(){
     }
 
 
-    return {getFirstPlayer}
+    return {}
 }
 
 /* let b = new Board();
 b.flipCard(0, 3);
 b.printCard(0, 3); */
 
-let g = new Game();
-g.getFirstPlayer();
-g.getFirstPlayer();
-g.getFirstPlayer();
-g.getFirstPlayer();
+let g = Game();
 
 
 
