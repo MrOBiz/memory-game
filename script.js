@@ -101,7 +101,7 @@ function Game(){
     }
 
     function playRound(row, col){
-        
+        console.log(row + col);
     }
 
     return {playRound}
@@ -112,6 +112,7 @@ b.flipCard(0, 3);
 b.printCard(0, 3); */
 
 let g = Game();
+g.playRound(2, 3);
 
 
 
