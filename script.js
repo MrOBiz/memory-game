@@ -101,8 +101,8 @@ function Game(){
     }
 
     function playRound(row, col){
-        console.log(row + col);
-        //board placement
+        console.log(row, col);
+        
     }
 
     return {playRound}
