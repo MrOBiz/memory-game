@@ -102,6 +102,7 @@ function Game(){
 
     function playRound(row, col){
         console.log(row, col);
+        //conclude before 30/09
         
     }
 
