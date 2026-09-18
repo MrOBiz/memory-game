@@ -85,6 +85,7 @@ function Board() {
 function Game(){
     let myBoard = Board();
     let players = ["John", "Dana"];
+    let firstPick;
     let activePlayer = getFirstPlayer();
     let pairCountOne = 0;
     let pairCountTwo = 0;
