@@ -102,7 +102,7 @@ function Game(){
     }
 
     function playRound(row, col){
-
+        console.log("works");
         
     }
 
